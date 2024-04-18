@@ -1,17 +1,15 @@
 <body>
   <nav class="navbar">
     <a>Torn Manager</a>
+    <div>
+      <label for="username">Username:</label><br>
+      <input type="text" id="username" name="username"><br>
+      <label for="password">ApiKey:</label><br>
+      <input type="password" id="ApiKey" name="key">
+    </div>
     <div class="navbar-collapse sticky-top collapse">
-        <button type="button">
-        <li class="nav-item float-right">
-          <a class="nav-link">Log In</a>
-        </li>
-        </button>
-        <button>
-        <li class="nav-item">
-          <a class="nav-link">Sign Up</a>
-        </li>
-        </button>
+          <a>Log In</a>
+          <a [routerLink]="['/sign-up']">Sign Up</a>
     </div>
   </nav>
 </body>
