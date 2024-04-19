@@ -2,12 +2,11 @@
 using Microsoft.EntityFrameworkCore;
 using API.Entities;
 using API.Data;
+using Api.Controllers;
 
 namespace API.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class UsersController : ControllerBase
+    public class UsersController : BaseApiController
     {
         private readonly DataContext _context;
         public UsersController(DataContext context)
