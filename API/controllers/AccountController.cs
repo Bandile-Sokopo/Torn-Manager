@@ -2,8 +2,10 @@
 using API.Data;
 using API.DTOs;
 using API.Entities;
+using API.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Win32;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -12,14 +14,16 @@ namespace API.controllers
     public class AccountController : BaseApiController
     {
         private readonly DataContext _context;
+        private readonly ITokenService _tokenService;
 
-        public AccountController(DataContext context)
+        public AccountController(DataContext context, ITokenService tokenService)
         {
             _context = context;
+            _tokenService = tokenService;
         }
 
         [HttpPost("register")]//api/account/register
-        public async Task<ActionResult<User>> Register(RegisterDTO register)
+        public async Task<ActionResult<UserDto>> Register(RegisterDTO register)
         {
             if(await UserExists(register.Username)) return BadRequest("Username is taken");
 
@@ -32,11 +36,15 @@ namespace API.controllers
             };
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
-            return user;
+            return new UserDto
+            {
+                Username = user.UserName,
+                Token = _tokenService.CreateToken(user),
+            };
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<User>> Login(LoginDto loginDto)
+        public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
         {
             var user = await _context.Users.SingleOrDefaultAsync(x => x.UserName == loginDto.Username);
 
@@ -56,7 +64,11 @@ namespace API.controllers
                     return Unauthorized("Invalid Password");
                 }
             }
-            return user;
+            return new UserDto
+            {
+                Username = user.UserName,
+                Token = _tokenService.CreateToken(user),
+            };
         }
 
         private async Task<bool> UserExists(string username)
