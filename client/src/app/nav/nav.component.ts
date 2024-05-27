@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AccountService } from '../_services/account.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,11 +8,24 @@ import { Component } from '@angular/core';
 })
 export class NavComponent {
 
-  model: any = {}
+  model: any = {};
+  loggedIn = false;
+
+  constructor(private accountService: AccountService) { }
 
   login()
   {
+    this.accountService.login(this.model).subscribe({
+      next: response =>
+      {
+        this.loggedIn = true;
+      },
+      error: error => console.log(error)
+    })
+  }
 
+  logout() {
+    this.loggedIn = false;
   }
 
 }
