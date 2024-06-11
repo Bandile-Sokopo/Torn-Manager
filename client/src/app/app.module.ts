@@ -12,6 +12,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
+import { StocksComponent } from './stocks/stocks.component';
+import { FactionsComponent } from './factions/factions.component';
+import { NpcLootComponent } from './npc-loot/npc-loot.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { RegisterComponent } from './register/register.component';
     SignUpComponent,
     NavComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    StocksComponent,
+    FactionsComponent,
+    NpcLootComponent
   ],
   imports: [
     BrowserModule,
