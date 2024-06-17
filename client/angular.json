@@ -27,6 +27,7 @@
             "styles": [
               "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/ngx-toastr/toast.css",
               "src/styles.css"
             ],
             "scripts": []

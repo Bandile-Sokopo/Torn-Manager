@@ -15,6 +15,7 @@ import { RegisterComponent } from './register/register.component';
 import { StocksComponent } from './stocks/stocks.component';
 import { FactionsComponent } from './factions/factions.component';
 import { NpcLootComponent } from './npc-loot/npc-loot.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,9 @@ import { NpcLootComponent } from './npc-loot/npc-loot.component';
     FormsModule,
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
