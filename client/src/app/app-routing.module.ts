@@ -8,9 +8,17 @@ import { authGuard } from './_guards/auth.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'factions', component: FactionsComponent, canActivate: [authGuard] },
-  { path: 'npc-loot', component: NpcLootComponent },
-  { path: 'stocks', component: StocksComponent },
+  {
+    path: '',
+    runGuardsAndResolvers: 'always',
+    canActivate: [authGuard],
+    children: [
+      { path: 'factions', component: FactionsComponent},
+      { path: 'npc-loot', component: NpcLootComponent },
+      { path: 'stocks', component: StocksComponent },
+
+    ]
+  },
   { path: '**', component: HomeComponent, pathMatch: 'full' },
 ];
 
