@@ -17,7 +17,7 @@ export class NavComponent {
 
   constructor(public accountService: AccountService, private router: Router, private toastr: ToastrService) { }
 
-  ngOnInit(): void {
+ ngOnInit(): void {
     this.currentUser$ = this.accountService.currentUser$;
   }
 

@@ -16,6 +16,7 @@ import { StocksComponent } from './stocks/stocks.component';
 import { FactionsComponent } from './factions/factions.component';
 import { NpcLootComponent } from './npc-loot/npc-loot.component';
 import { ToastrModule } from 'ngx-toastr';
+import { SharedModule } from './_modules/shared.module';
 
 @NgModule({
   declarations: [
@@ -34,10 +35,7 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    BsDropdownModule.forRoot(),
-    ToastrModule.forRoot({
-      positionClass: 'toast-bottom-right'
-    }),
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
