@@ -31,11 +31,11 @@ namespace API.controllers
         [HttpGet("server-error")]
         public ActionResult<string> GetServerError()
         {
-            var item = _context.Users.Find(-1);
+                var item = _context.Users.Find(-1);
 
-            var itemToReturn = item.ToString();
+                var itemToReturn = item.ToString();
 
-            return itemToReturn;
+                return itemToReturn;
         }
         [HttpGet("bad-request")]
         public ActionResult<string> GetBadRequest()
