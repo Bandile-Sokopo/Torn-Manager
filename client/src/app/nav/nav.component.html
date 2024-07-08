@@ -11,12 +11,15 @@
           <a class="nav-link" href="#">Link</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true" routerLink="/factions" routerLinkActive="active">Factions</a>
+          <a class="nav-link" routerLink="/factions" routerLinkActive="active">Factions</a>
         </li>
         <li class="nav-item" (click)="logout()">
-          <a class="nav-link disabled" aria-disabled="true" routerLink="/npc-loot" routerLinkActive="active">NPC Loot</a>
+          <a class="nav-link" routerLink="/npc-loot" routerLinkActive="active">NPC Loot</a>
         </li>
       </ng-container>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/errors" routerLinkActive="active">Errors</a>
+      </li>
     </ul>
 
     <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown>

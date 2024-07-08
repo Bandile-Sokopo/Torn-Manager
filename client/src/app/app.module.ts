@@ -17,6 +17,7 @@ import { FactionsComponent } from './factions/factions.component';
 import { NpcLootComponent } from './npc-loot/npc-loot.component';
 import { ToastrModule } from 'ngx-toastr';
 import { SharedModule } from './_modules/shared.module';
+import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SharedModule } from './_modules/shared.module';
     RegisterComponent,
     StocksComponent,
     FactionsComponent,
-    NpcLootComponent
+    NpcLootComponent,
+    TestErrorsComponent
   ],
   imports: [
     BrowserModule,

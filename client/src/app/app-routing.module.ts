@@ -5,6 +5,7 @@ import { FactionsComponent } from './factions/factions.component';
 import { NpcLootComponent } from './npc-loot/npc-loot.component';
 import { StocksComponent } from './stocks/stocks.component';
 import { authGuard } from './_guards/auth.guard';
+import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
 
     ]
   },
+  {path: 'errors', component: TestErrorsComponent},
   { path: '**', component: HomeComponent, pathMatch: 'full' },
 ];
 
