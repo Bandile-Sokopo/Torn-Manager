@@ -25,10 +25,7 @@ export class NavComponent {
   {
     this.accountService.login(this.model).subscribe({
       next: () =>
-      {
         this.router.navigateByUrl('/factions')
-      },
-      error: error => this.toastr.error(error.error)
     })
   }
 

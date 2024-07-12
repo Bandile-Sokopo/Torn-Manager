@@ -19,6 +19,9 @@ import { ToastrModule } from 'ngx-toastr';
 import { SharedModule } from './_modules/shared.module';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { ErrorInterceptor } from './_interceptors/error.interceptor';
+import { ServerComponent } from './errors/server/server.component';
+import { ServerErrorComponent } from './errors/server-error/server-error.component';
+import { NotFoundComponent } from './errors/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { ErrorInterceptor } from './_interceptors/error.interceptor';
     StocksComponent,
     FactionsComponent,
     NpcLootComponent,
-    TestErrorsComponent
+    TestErrorsComponent,
+    ServerComponent,
+    ServerErrorComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
