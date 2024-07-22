@@ -1,6 +1,7 @@
 ﻿using API.Entities;
 using API.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace API.Data
 {
@@ -34,6 +35,11 @@ namespace API.Data
         public void Update(User user)
         {
             _context.Entry(user).State = EntityState.Modified;
+        }
+
+        public async Task<User> GetTransactionAsync(string username)
+        {
+
         }
     }
 }
