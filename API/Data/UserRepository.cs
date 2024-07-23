@@ -36,10 +36,5 @@ namespace API.Data
         {
             _context.Entry(user).State = EntityState.Modified;
         }
-
-        public async Task<User> GetTransactionAsync(string username)
-        {
-
-        }
     }
 }
