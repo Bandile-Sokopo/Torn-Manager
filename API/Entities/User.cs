@@ -11,6 +11,6 @@
         public DateTime Created { get; set; } = DateTime.UtcNow;
         public DateTime LastActive { get; set; }
         public string Gender { get; set; }
-        public Photo photo { get; set; }
+        public Photo? photo { get; set; }
     }
 }

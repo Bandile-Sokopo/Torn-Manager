@@ -10,7 +10,6 @@ namespace API.Interfaces
         Task<IEnumerable<User>> GetUsersAsync();
         Task<User> GetUserIdAsync(int id);
         Task<User> GetUserByUsernameAsync(string username);
-        Task<User> GetTransactionAsync();
 
     }
 }
