@@ -19,7 +19,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { SharedModule } from './_modules/shared.module';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { ErrorInterceptor } from './_interceptors/error.interceptor';
-import { ServerComponent } from './errors/server/server.component';
+//import { ServerComponent } from './errors/server/server.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 
@@ -34,7 +34,7 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
     FactionsComponent,
     NpcLootComponent,
     TestErrorsComponent,
-    ServerComponent,
+    //ServerComponent,
     ServerErrorComponent,
     NotFoundComponent
   ],
