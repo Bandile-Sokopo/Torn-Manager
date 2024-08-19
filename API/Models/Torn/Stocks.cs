@@ -23,7 +23,8 @@ public class Stock
     [JsonProperty("investors")]
     public int Investors { get; set; }
     [JsonProperty("benefit")]
-    public Dictionary<int, Benefit> benefit { get; set; } = new Dictionary<int, Benefit>(); }
+    public Dictionary<int, Benefit> benefit { get; set; } = new Dictionary<int, Benefit>();
+}
 
 public class Benefit
 {
