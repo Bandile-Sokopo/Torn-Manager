@@ -5,6 +5,19 @@ import { Component } from '@angular/core';
   templateUrl: './factions.component.html',
   styleUrls: ['./factions.component.css']
 })
-export class FactionsComponent {
+export class FactionsComponent implements OnInit {
+  members: Member[] = [];
+
+  constructor(private memberService: MemberService) {}
+
+  ngOnInit() : void{
+    this.loadMembers();
+  }
+
+  loadMembers(){
+    this.membersService.getMembers().subscribe({
+      next: members => this.members = members
+    })
+    }
 
 }
