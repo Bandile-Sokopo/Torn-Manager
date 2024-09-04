@@ -7,8 +7,7 @@ namespace API.Entities
         public int Id { get; set; }
         public string Stock {  get; set; }
         public DateTime DatePurchased { get; set; }
-        public int AmountOwned { get; set; }
         public int Price { get; set; }
-        public int Total { get; set; }
+        public int TotalPurchased { get; set; }
     }
 }
