@@ -1,4 +1,6 @@
 ﻿using API.Data;
+using API.DTOs;
+using API.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.controllers
@@ -12,9 +14,21 @@ namespace API.controllers
         }
 
         [HttpPost]
-        public IActionResult<UserStocks> AddStock([FromBody] UserStocks item) { }
+        public async Task<ActionResult<OwnedStockDto>> AddStock([FromBody] OwnedStocks item)
+        {
+            _context.Add(item);
+            _context.SaveChanges();
+            return new OwnedStockDto
+            {
+                Stock = item.Stock,
+                TotalOwned = item.TotalOwned,
+            };
+        }
 
         [HttpPut]
-        public IActionResult<UserStocks> UpdateStock([FromBody] UserStocks item) { }
+        public IActionResult<UserStocks> UpdateStock([FromBody] UserStocks item)
+        {
+
+        }
     }
 }
