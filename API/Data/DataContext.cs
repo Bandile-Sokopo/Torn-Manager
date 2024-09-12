@@ -11,5 +11,8 @@ namespace API.Data
 
         public DbSet<User> Users { get; set; }
         public DbSet<TransactionHistory> Transactions { get; set; }
+        public DbSet<OwnedStocks> OwnedStocks { get; set; }
+        public DbSet<StockTransactions> StockTransactions { get; set; }
+
     }
 }
