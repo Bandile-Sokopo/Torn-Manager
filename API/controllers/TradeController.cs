@@ -18,7 +18,13 @@ namespace API.controllers
         [HttpPost]
         public async Task<TradeDto> AddTrade(Trade trade)
         {
-
+            _context.Add(trade);
+            _context.SaveChanges();
+            return new TradeDto
+            {
+                Items = trade.Items,
+                AmountPaid = trade.AmountPaid,
+            };
         }
     }
 }
